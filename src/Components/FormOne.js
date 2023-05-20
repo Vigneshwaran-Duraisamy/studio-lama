@@ -19,7 +19,6 @@ const FormOne = () => {
 
     const storeData = useSelector((state) => state.form)
     
-    console.log("LOC", backupData)
 
     useEffect(()=>{
         setFormData(prevErr => ({ ...prevErr, name: (location?.state?.name) ? (location?.state?.name) : "" }));
@@ -94,7 +93,6 @@ const FormOne = () => {
         }
     )
 
-    console.log("FORmData", formData)
 
     const [valid, setValid] = useState(
         {
@@ -106,12 +104,10 @@ const FormOne = () => {
         }
     )
 
-    console.log("VALID", valid)
 
 
     const handleNameChange = (e) => {
         const result = e.target.value.replace(/[^a-z]/gi, '');
-        // setName(result);
         setNameErr(false)
         setFormData(prevErr => ({ ...prevErr, name: result }));
         if(result.length >= 3){
@@ -121,7 +117,6 @@ const FormOne = () => {
         }
     }
     const handleEmailChange = (e) => {
-        // setMail(e.target.value)
         setMailErr(false)
         setFormData(prevErr => ({ ...prevErr, mail: e.target.value }));
         if(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(e.target.value)){
@@ -131,16 +126,12 @@ const FormOne = () => {
         }
     }
     const handleDateChange = (d, dateString) => {
-        // setDate(dateString);
-        // setDateValue(date)
-        console.log("DATE", d)
         setDateErr(false)
         setFormData(prevErr => ({ ...prevErr, date: dateString }));
         setFormData(prevErr => ({ ...prevErr, dateValue: d }));
         setValid(prev => ({ ...prev, date: true }))
     };
     const handleWeekNoChange = (e) => {
-        // setWeekNo(e.target.value)
         setWeekNoErr(false)
         setFormData(prevErr => ({ ...prevErr, weekNo: e.target.value }));
         setValid(prev => ({ ...prev, weekNo: true }))
@@ -177,7 +168,6 @@ const FormOne = () => {
 
     const handleSubmit = (e) =>{
         e.preventDefault();
-        console.log("storeData", storeData)
         if(storeData.mail === formData.mail){
             navigate('/err')
         } else{

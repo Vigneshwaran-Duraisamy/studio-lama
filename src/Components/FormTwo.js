@@ -10,16 +10,10 @@ const FormTwo = () => {
 
     const navigate = useNavigate()
     const location = useLocation()
-    console.log(">>>>>", location)
-
-    
 
     const formData = JSON.parse(localStorage.getItem('formData'));
-    console.log("NEXT PAGE DATA", formData)
-    console.log("ListData", childSymptomsList)
 
     const [selectedItems, setSelectedItems] = useState([])
-    console.log("selected", selectedItems)
 
     const handleClick = (val) => {
         if (selectedItems.includes(val)) {

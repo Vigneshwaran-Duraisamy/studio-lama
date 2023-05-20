@@ -10,15 +10,10 @@ const SubForm = () => {
     const location = useLocation()
 
     const pickedItem = JSON.parse(localStorage.getItem('pickedItem'));
-    console.log("PICK", pickedItem)
     const clientData = JSON.parse(localStorage.getItem('formData'));
-    console.log("clientData", clientData)
     let curInd = JSON.parse(localStorage.getItem('currentInd'));
 
     const [currentIndex, setCurrentIndex] = useState(curInd)
-    console.log("QQQQQ",location)
-    console.log(location?.state && location?.state[currentIndex])
-    console.log("childSymptomsType", childSymptomsType)
 
     
 
@@ -41,7 +36,6 @@ const SubForm = () => {
     }
 
     const [selectedItems, setSelectedItems] = useState([])
-    console.log("selected", selectedItems)
 
     const handleClick = (val) => {
         if (selectedItems.includes(val)) {

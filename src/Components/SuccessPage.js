@@ -13,7 +13,6 @@ const SuccessPage = () => {
     const dispatch = useDispatch()
     const lastFormData = JSON.parse(localStorage.getItem('lastformData'));
     const formData = JSON.parse(localStorage.getItem('formData'));
-    console.log("lastFormData", lastFormData)
 
     return (
         <div className='py-5'>

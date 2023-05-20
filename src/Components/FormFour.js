@@ -30,7 +30,6 @@ const FormFour = () => {
         }
     )
 
-    console.log("LASTFORM", lastformData)
 
     const [valid, setValid] = useState(
         {
@@ -41,17 +40,14 @@ const FormFour = () => {
         }
     )
 
-    console.log("VALIDDD", valid)
 
     const handleDateChange = (d, dateString) => {
-        console.log("DATE", d)
         setlastFormData(prevErr => ({ ...prevErr, date: dateString }));
         setlastFormData(prevErr => ({ ...prevErr, dateValue: d }));
         setValid(prev => ({ ...prev, date: true }))
     };
 
     const handleTimeRangeChange = (d, dateString) => {
-        console.log("Time", d)
         setlastFormData(prevErr => ({ ...prevErr, time: dateString }));
         setlastFormData(prevErr => ({ ...prevErr, timeValue: d }));
         setValid(prev => ({ ...prev, time: true }))
